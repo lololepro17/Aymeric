@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <!-- définition du viewport pour une bonne adaptation sur mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Photographie Automobile</title>
+    <!-- lien vers la feuille de style externe -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- header : titre du site et menu de navigation -->
+    <header>
+        <h1>Nom du Photographe Automobile</h1>
+        <nav>
+            <ul>
+                <li><a href="#presentation">présentation</a></li>
+                <li><a href="#services">services</a></li>
+                <li><a href="#contact">contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- section présentation pour mettre en avant votre passion pour la photographie de voitures -->
+    <section id="presentation" class="fade-in">
+        <h2>présentation</h2>
+        <p>Bienvenue sur mon portfolio dédié à la photographie automobile. Passionné par les voitures, je capture l'essence de chaque modèle avec un regard unique et artistique.</p>
+    </section>
+
+    <!-- section services pour détailler vos prestations -->
+    <section id="services" class="fade-in">
+        <h2>services</h2>
+        <p>Je propose des séances photo pour :</p>
+        <ul>
+            <li>shooting de voitures de luxe</li>
+            <li>reportages d'événements automobiles</li>
+            <li>portraits de voitures classiques</li>
+            <li>publicités et promotions automobiles</li>
+        </ul>
+    </section>
+
+    <!-- section contact pour permettre aux visiteurs de vous joindre -->
+    <section id="contact" class="fade-in">
+        <h2>contact</h2>
+        <p>Pour toute demande de séance ou collaboration, n'hésitez pas à me contacter via le formulaire ci-dessous :</p>
+        <form action="#" method="post">
+            <!-- champ pour le nom -->
+            <label for="nom">nom :</label>
+            <input type="text" id="nom" name="nom" required>
+            
+            <!-- champ pour l'email -->
+            <label for="email">email :</label>
+            <input type="email" id="email" name="email" required>
+            
+            <!-- zone de texte pour le message -->
+            <label for="message">message :</label>
+            <textarea id="message" name="message" required></textarea>
+            
+            <!-- bouton d'envoi du formulaire -->
+            <button type="submit">envoyer</button>
+        </form>
+    </section>
+
+    <!-- footer pour les informations de copyright -->
+    <footer>
+        <p>&copy; 2025 Nom du Photographe Automobile. tous droits réservés.</p>
+    </footer>
+</body>
+</html>
