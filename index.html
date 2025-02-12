@@ -9,55 +9,54 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- header : titre du site et menu de navigation -->
+    <!-- header avec menu de navigation -->
     <header>
-        <h1>Nom du Photographe Automobile</h1>
         <nav>
             <ul>
-                <li><a href="#presentation">présentation</a></li>
-                <li><a href="#services">services</a></li>
-                <li><a href="#galerie">galerie</a></li>
-                <li><a href="#contact">contact</a></li>
+                <!-- lien pour afficher la section home -->
+                <li><a href="#" data-target="home">home</a></li>
+                <!-- lien pour afficher la section about -->
+                <li><a href="#" data-target="about">about</a></li>
+                <!-- lien pour afficher la section contact -->
+                <li><a href="#" data-target="contact">contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- section présentation pour mettre en avant votre passion -->
-    <section id="presentation" class="fade-in">
-        <h2>présentation</h2>
-        <p>Bienvenue sur mon portfolio dédié à la photographie automobile. Passionné par les voitures, je capture l'essence de chaque modèle avec un regard unique et artistique.</p>
-    </section>
-
-    <!-- section services pour détailler vos prestations -->
-    <section id="services" class="fade-in">
-        <h2>services</h2>
-        <p>Je propose des séances photo pour :</p>
-        <ul>
-            <li>shooting de voitures de luxe</li>
-            <li>portraits de voitures classiques</li>
-            <li>publicités et promotions automobiles</li>
-        </ul>
-    </section>
-
-    <!-- section galerie affichant vos images -->
-    <section id="galerie" class="fade-in">
-        <h2>galerie</h2>
+    <!-- section home avec une galerie d'images -->
+    <section id="home" class="content">
+        <h2>home</h2>
         <div class="gallery">
             <!-- image 1 -->
-            <img src="image1.jpeg" alt="voiture 1">
+            <img src="image1.jpeg" alt="photo 1">
             <!-- image 2 -->
-            <img src="image2.jpeg" alt="voiture 2">
+            <img src="image2.jpeg" alt="photo 2">
             <!-- image 3 -->
-            <img src="image3.jpeg" alt="voiture 3">
+            <img src="image3.jpeg" alt="photo 3">
             <!-- image 4 -->
-            <img src="image4.jpeg" alt="voiture 4">
+            <img src="image4.jpeg" alt="photo 4">
         </div>
     </section>
 
-    <!-- section contact pour permettre aux visiteurs de vous joindre -->
-    <section id="contact" class="fade-in">
+    <!-- section about présentant votre profil et votre démarche -->
+    <section id="about" class="content">
+        <h2>about</h2>
+        <p>bonjour, je m'appelle [votre nom]. je suis photographe spécialisé dans l'automobile. je capture l'essence et la beauté des voitures grâce à un regard artistique et technique.</p>
+        <p>ce que je fais : je réalise des shootings, des portraits de voitures et des reportages sur des événements automobiles.</p>
+        <p>pourquoi je le fais : ma passion pour l'automobile et l'image m'inspire à créer des œuvres uniques qui racontent une histoire.</p>
+        <p>comment je procède : grâce à une technique soignée et un équipement professionnel, je mets en lumière chaque détail qui rend chaque véhicule exceptionnel.</p>
+    </section>
+
+    <!-- section contact avec liens et formulaire -->
+    <section id="contact" class="content">
         <h2>contact</h2>
-        <p>Pour toute demande de séance ou collaboration, n'hésitez pas à me contacter via le formulaire ci-dessous :</p>
+        <div class="contact-links">
+            <!-- lien vers instagram -->
+            <p><a href="https://www.instagram.com/votre_compte" target="_blank">instagram</a></p>
+            <!-- lien mailto pour envoyer un email -->
+            <p><a href="mailto:votre.email@example.com">envoyer un email</a></p>
+        </div>
+        <!-- formulaire de contact -->
         <form action="#" method="post">
             <!-- champ pour le nom -->
             <label for="nom">nom :</label>
@@ -71,14 +70,43 @@
             <label for="message">message :</label>
             <textarea id="message" name="message" required></textarea>
             
-            <!-- bouton d'envoi du formulaire -->
+            <!-- bouton d'envoi -->
             <button type="submit">envoyer</button>
         </form>
     </section>
 
-    <!-- footer pour les informations de copyright -->
-    <footer>
-        <p>&copy; 2025 Nom du Photographe Automobile. tous droits réservés.</p>
-    </footer>
+    <!-- script pour la navigation dynamique entre les sections -->
+    <script>
+        // fonction pour afficher la section demandée et masquer les autres
+        function showSection(sectionId) {
+            // récupérer toutes les sections à afficher
+            var sections = document.querySelectorAll('section.content');
+            sections.forEach(function(section) {
+                // masquer chaque section
+                section.style.display = 'none';
+            });
+            // afficher la section sélectionnée
+            document.getElementById(sectionId).style.display = 'block';
+        }
+
+        // dès que le dom est chargé
+        document.addEventListener('DOMContentLoaded', function() {
+            // afficher par défaut la section home
+            showSection('home');
+
+            // ajouter un écouteur d'événement sur chaque lien du menu
+            var navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    // empêcher le comportement par défaut du lien
+                    e.preventDefault();
+                    // récupérer la cible via l'attribut data-target
+                    var target = this.getAttribute('data-target');
+                    // afficher la section correspondante
+                    showSection(target);
+                });
+            });
+        });
+    </script>
 </body>
 </html>
