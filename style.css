@@ -1,19 +1,18 @@
-/* reset des marges et paddings par défaut */
+/* --- Reset et styles de base --- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* style de base pour le body avec fond sombre et texte clair */
 body {
     font-family: Arial, sans-serif;
-    background-color: #121212; /* fond sombre */
-    color: #e0e0e0;            /* texte clair */
+    background-color: #121212; /* Fond sombre */
+    color: #e0e0e0;            /* Texte clair */
     line-height: 1.6;
 }
 
-/* style du header et de la navigation */
+/* --- Header et Navigation --- */
 header {
     background: #1e1e1e;
     padding: 20px;
@@ -36,38 +35,104 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #ff6600; /* couleur d'accent */
+    color: #ff6600; /* Couleur d'accent */
 }
 
-/* style des sections ; on masque toutes les sections par défaut */
+/* --- Sections --- */
 section.content {
     padding: 20px;
-    display: none; /* chaque section est cachée jusqu'à activation */
+    display: none; /* Masquées par défaut */
     animation: fadeIn 0.5s ease-in-out;
 }
 
-/* animation pour l'apparition des sections */
 @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* --- Slider --- */
+.slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+/* Overlay sur le slider pour effet de contraste et parallax léger */
+.slider .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+    pointer-events: none;
+    /* Vous pouvez ajouter un effet de déplacement léger sur scroll avec du JS ou CSS */
+}
+
+.slide {
+    display: none;  /* Toutes les slides sont cachées par défaut */
+    position: relative;
+}
+
+.slide.active {
+    display: block;  /* La slide active est affichée */
+    animation: fadeIn 1s ease-in-out;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 15px;
+    border-radius: 4px;
+    font-size: 18px;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* Animation pour le texte d'accroche */
+@keyframes fadeInUp {
     from {
         opacity: 0;
+        transform: translateY(20px);
     }
     to {
         opacity: 1;
+        transform: translateY(0);
     }
 }
 
-/* style de la galerie dans la section home */
+/* --- Galerie en Patchwork (optionnelle) --- */
 .gallery {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 10px;
+    column-count: 2;
+    column-gap: 10px;
     margin-top: 10px;
+}
+
+@media (min-width: 768px) {
+    .gallery {
+        column-count: 3;
+    }
+}
+
+@media (min-width: 1080px) {
+    .gallery {
+        column-count: 4;
+    }
 }
 
 .gallery img {
     width: 100%;
+    margin-bottom: 10px;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
     transition: transform 0.3s ease;
 }
 
@@ -75,20 +140,48 @@ section.content {
     transform: scale(1.05);
 }
 
-/* adaptation de la grille sur écrans moyens et larges */
-@media (min-width: 768px) {
-    .gallery {
-        grid-template-columns: 1fr 1fr;
-    }
+/* --- Bouton Call-to-Action --- */
+.cta {
+    text-align: center;
+    margin: 20px 0;
 }
 
-@media (min-width: 1080px) {
-    .gallery {
-        grid-template-columns: repeat(4, 1fr);
-    }
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #ff6600;
+    color: #121212;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 18px;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
-/* style du formulaire de contact */
+.cta-button:hover {
+    background: #e65c00;
+    transform: scale(1.05);
+}
+
+/* --- Section About --- */
+#about p {
+    margin-bottom: 15px;
+}
+
+/* --- Section Contact --- */
+.contact-links p {
+    margin-bottom: 10px;
+}
+
+.contact-links a {
+    color: #ff6600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-links a:hover {
+    color: #e65c00;
+}
+
 form {
     display: flex;
     flex-direction: column;
@@ -122,15 +215,4 @@ form button {
 
 form button:hover {
     background: #e65c00;
-}
-
-/* style des liens dans la section contact */
-.contact-links a {
-    color: #ff6600;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.contact-links a:hover {
-    color: #e65c00;
 }

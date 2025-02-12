@@ -2,110 +2,129 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <!-- définition du viewport pour une bonne adaptation sur mobile -->
+    <!-- Définition du viewport pour une bonne adaptation sur mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Photographie Automobile</title>
-    <!-- lien vers la feuille de style externe -->
+    <!-- Lien vers la feuille de style externe -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- header avec menu de navigation -->
+    <!-- HEADER : Menu de navigation -->
     <header>
         <nav>
             <ul>
-                <!-- lien pour afficher la section home -->
                 <li><a href="#" data-target="home">home</a></li>
-                <!-- lien pour afficher la section about -->
                 <li><a href="#" data-target="about">about</a></li>
-                <!-- lien pour afficher la section contact -->
                 <li><a href="#" data-target="contact">contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- section home avec une galerie d'images -->
+    <!-- SECTION HOME : Slider + (Galerie optionnelle) + Call-to-Action -->
     <section id="home" class="content">
-        <h2>home</h2>
-        <div class="gallery">
-            <!-- image 1 -->
-            <img src="image1.jpeg" alt="photo 1">
-            <!-- image 2 -->
-            <img src="image2.jpeg" alt="photo 2">
-            <!-- image 3 -->
-            <img src="image3.jpeg" alt="photo 3">
-            <!-- image 4 -->
-            <img src="image4.jpeg" alt="photo 4">
+        <!-- Slider avec overlay -->
+        <div class="slider">
+            <!-- Overlay pour effet parallax/contraste -->
+            <div class="overlay"></div>
+            <div class="slide active">
+                <img src="image1.jpeg" alt="photo 1">
+                <div class="caption">Des images qui font rugir l'âme</div>
+            </div>
+            <div class="slide">
+                <img src="image2.jpeg" alt="photo 2">
+                <div class="caption">Révéler l'émotion derrière le métal</div>
+            </div>
+            <div class="slide">
+                <img src="image3.jpeg" alt="photo 3">
+                <div class="caption">Chaque voiture, une œuvre d'art</div>
+            </div>
+            <div class="slide">
+                <img src="image4.jpeg" alt="photo 4">
+                <div class="caption">Capturer l'âme de la vitesse</div>
+            </div>
+        </div>
+
+        <!-- Galerie en patchwork (optionnelle) -->
+        <div class="gallery" id="gallery">
+            <!-- Vous pouvez ajouter ici d'autres images via JS si souhaité -->
+        </div>
+
+        <!-- Bouton Call-to-Action -->
+        <div class="cta">
+            <a href="#" data-target="contact" class="cta-button">Contactez-moi</a>
         </div>
     </section>
 
-    <!-- section about présentant votre profil et votre démarche -->
+    <!-- SECTION ABOUT : Présentation de vous et de votre démarche -->
     <section id="about" class="content">
         <h2>about</h2>
-        <p>bonjour, je m'appelle [votre nom]. je suis photographe spécialisé dans l'automobile. je capture l'essence et la beauté des voitures grâce à un regard artistique et technique.</p>
-        <p>ce que je fais : je réalise des shootings, des portraits de voitures et des reportages sur des événements automobiles.</p>
-        <p>pourquoi je le fais : ma passion pour l'automobile et l'image m'inspire à créer des œuvres uniques qui racontent une histoire.</p>
-        <p>comment je procède : grâce à une technique soignée et un équipement professionnel, je mets en lumière chaque détail qui rend chaque véhicule exceptionnel.</p>
+        <p>Bonjour, je m'appelle [votre nom]. Je suis photographe spécialisé dans l'automobile.</p>
+        <p>Ce que je fais : je réalise des shootings, des portraits, des reportages et couvre des événements automobiles.</p>
+        <p>Pourquoi je le fais : ma passion pour l'automobile et l'image m'inspire à capturer l'âme de chaque véhicule.</p>
+        <p>Comment je procède : avec une approche artistique, un équipement professionnel et une attention minutieuse aux détails.</p>
     </section>
 
-    <!-- section contact avec liens et formulaire -->
+    <!-- SECTION CONTACT : Liens vers réseaux et formulaire -->
     <section id="contact" class="content">
         <h2>contact</h2>
         <div class="contact-links">
-            <!-- lien vers instagram -->
-            <p><a href="https://www.instagram.com/votre_compte" target="_blank">instagram</a></p>
-            <!-- lien mailto pour envoyer un email -->
-            <p><a href="mailto:votre.email@example.com">envoyer un email</a></p>
+            <p><a href="https://www.instagram.com/votre_compte" target="_blank">Instagram</a></p>
+            <p><a href="mailto:votre.email@example.com">Envoyer un email</a></p>
         </div>
-        <!-- formulaire de contact -->
         <form action="#" method="post">
-            <!-- champ pour le nom -->
             <label for="nom">nom :</label>
             <input type="text" id="nom" name="nom" required>
             
-            <!-- champ pour l'email -->
             <label for="email">email :</label>
             <input type="email" id="email" name="email" required>
             
-            <!-- zone de texte pour le message -->
             <label for="message">message :</label>
             <textarea id="message" name="message" required></textarea>
             
-            <!-- bouton d'envoi -->
             <button type="submit">envoyer</button>
         </form>
     </section>
 
-    <!-- script pour la navigation dynamique entre les sections -->
+    <!-- Script pour la navigation dynamique et le slider automatique -->
     <script>
-        // fonction pour afficher la section demandée et masquer les autres
+        // Fonction pour afficher uniquement la section ciblée et masquer les autres
         function showSection(sectionId) {
-            // récupérer toutes les sections à afficher
             var sections = document.querySelectorAll('section.content');
             sections.forEach(function(section) {
-                // masquer chaque section
                 section.style.display = 'none';
             });
-            // afficher la section sélectionnée
-            document.getElementById(sectionId).style.display = 'block';
+            var targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.style.display = 'block';
+            }
         }
 
-        // dès que le dom est chargé
         document.addEventListener('DOMContentLoaded', function() {
-            // afficher par défaut la section home
+            // Afficher par défaut la section "home"
             showSection('home');
 
-            // ajouter un écouteur d'événement sur chaque lien du menu
-            var navLinks = document.querySelectorAll('nav a');
+            // Gestion de la navigation via le menu et le bouton CTA
+            var navLinks = document.querySelectorAll('nav a, .cta-button');
             navLinks.forEach(function(link) {
                 link.addEventListener('click', function(e) {
-                    // empêcher le comportement par défaut du lien
                     e.preventDefault();
-                    // récupérer la cible via l'attribut data-target
                     var target = this.getAttribute('data-target');
-                    // afficher la section correspondante
-                    showSection(target);
+                    if (target) {
+                        showSection(target);
+                    }
                 });
             });
+
+            // Slider automatique
+            var slides = document.querySelectorAll('.slide');
+            var currentSlide = 0;
+            var slideInterval = setInterval(nextSlide, 4000); // Change de slide toutes les 4 secondes
+
+            function nextSlide() {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add('active');
+            }
         });
     </script>
 </body>
