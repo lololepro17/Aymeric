@@ -1,131 +1,144 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <!-- Définition du viewport pour une bonne adaptation sur mobile -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Photographie Automobile</title>
-    <!-- Lien vers la feuille de style externe -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <!-- Définition du viewport pour une bonne adaptation sur mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Photographie Automobile</title>
+  <!-- Lien vers la feuille de style externe -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- HEADER : Menu de navigation -->
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#" data-target="home">home</a></li>
-                <li><a href="#" data-target="about">about</a></li>
-                <li><a href="#" data-target="contact">contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- HEADER : Menu de navigation -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#" data-target="home">home</a></li>
+        <li><a href="#" data-target="about">about</a></li>
+        <li><a href="#" data-target="contact">contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <!-- SECTION HOME : Slider + (Galerie optionnelle) + Call-to-Action -->
-    <section id="home" class="content">
-        <!-- Slider avec overlay -->
-        <div class="slider">
-            <!-- Overlay pour effet parallax/contraste -->
-            <div class="overlay"></div>
-            <div class="slide active">
-                <img src="image1.jpeg" alt="photo 1">
-                <div class="caption">Des images qui font rugir l'âme</div>
-            </div>
-            <div class="slide">
-                <img src="image2.jpeg" alt="photo 2">
-                <div class="caption">Révéler l'émotion derrière le métal</div>
-            </div>
-            <div class="slide">
-                <img src="image3.jpeg" alt="photo 3">
-                <div class="caption">Chaque voiture, une œuvre d'art</div>
-            </div>
-            <div class="slide">
-                <img src="image4.jpeg" alt="photo 4">
-                <div class="caption">Capturer l'âme de la vitesse</div>
-            </div>
-        </div>
+  <!-- SECTION HOME : Carrousel + Galerie patchwork + Bouton CTA -->
+  <section id="home" class="content">
+    <!-- Slider avec overlay -->
+    <div class="slider">
+      <div class="overlay"></div>
+      <div class="slide active">
+        <img src="image1.jpeg" alt="photo 1">
+        <div class="caption">Des images qui font rugir l'âme</div>
+      </div>
+      <div class="slide">
+        <img src="image2.jpeg" alt="photo 2">
+        <div class="caption">Révéler l'émotion derrière le métal</div>
+      </div>
+      <div class="slide">
+        <img src="image3.jpeg" alt="photo 3">
+        <div class="caption">Chaque voiture, une œuvre d'art</div>
+      </div>
+      <div class="slide">
+        <img src="image4.jpeg" alt="photo 4">
+        <div class="caption">Capturer l'âme de la vitesse</div>
+      </div>
+    </div>
 
-        <!-- Galerie en patchwork (optionnelle) -->
-        <div class="gallery" id="gallery">
-            <!-- Vous pouvez ajouter ici d'autres images via JS si souhaité -->
-        </div>
+    <!-- Galerie en patchwork sous le carrousel -->
+    <div class="gallery" id="gallery">
+      <!-- Les images seront ajoutées automatiquement via JavaScript -->
+    </div>
 
-        <!-- Bouton Call-to-Action -->
-        <div class="cta">
-            <a href="#" data-target="contact" class="cta-button">Contactez-moi</a>
-        </div>
-    </section>
+    <!-- Bouton Call-to-Action -->
+    <div class="cta">
+      <a href="#" data-target="contact" class="cta-button">Contactez-moi</a>
+    </div>
+  </section>
 
-    <!-- SECTION ABOUT : Présentation de vous et de votre démarche -->
-    <section id="about" class="content">
-        <h2>about</h2>
-        <p>Bonjour, je m'appelle [votre nom]. Je suis photographe spécialisé dans l'automobile.</p>
-        <p>Ce que je fais : je réalise des shootings, des portraits, des reportages et couvre des événements automobiles.</p>
-        <p>Pourquoi je le fais : ma passion pour l'automobile et l'image m'inspire à capturer l'âme de chaque véhicule.</p>
-        <p>Comment je procède : avec une approche artistique, un équipement professionnel et une attention minutieuse aux détails.</p>
-    </section>
+  <!-- SECTION ABOUT : Présentation -->
+  <section id="about" class="content">
+    <h2>about</h2>
+    <p>Bonjour, je m'appelle [votre nom]. Je suis photographe spécialisé dans l'automobile.</p>
+    <p>Ce que je fais : je réalise des shootings, des portraits, des reportages et couvre des événements automobiles.</p>
+    <p>Pourquoi je le fais : ma passion pour l'automobile et l'image m'inspire à capturer l'âme de chaque véhicule.</p>
+    <p>Comment je procède : avec une approche artistique, un équipement professionnel et une attention minutieuse aux détails.</p>
+  </section>
 
-    <!-- SECTION CONTACT : Liens vers réseaux et formulaire -->
-    <section id="contact" class="content">
-        <h2>contact</h2>
-        <div class="contact-links">
-            <p><a href="https://www.instagram.com/votre_compte" target="_blank">Instagram</a></p>
-            <p><a href="mailto:votre.email@example.com">Envoyer un email</a></p>
-        </div>
-        <form action="#" method="post">
-            <label for="nom">nom :</label>
-            <input type="text" id="nom" name="nom" required>
-            
-            <label for="email">email :</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="message">message :</label>
-            <textarea id="message" name="message" required></textarea>
-            
-            <button type="submit">envoyer</button>
-        </form>
-    </section>
+  <!-- SECTION CONTACT : Liens et formulaire -->
+  <section id="contact" class="content">
+    <h2>contact</h2>
+    <div class="contact-links">
+      <p><a href="https://www.instagram.com/votre_compte" target="_blank">Instagram</a></p>
+      <p><a href="mailto:votre.email@example.com">Envoyer un email</a></p>
+    </div>
+    <form action="#" method="post">
+      <label for="nom">nom :</label>
+      <input type="text" id="nom" name="nom" required>
+      
+      <label for="email">email :</label>
+      <input type="email" id="email" name="email" required>
+      
+      <label for="message">message :</label>
+      <textarea id="message" name="message" required></textarea>
+      
+      <button type="submit">envoyer</button>
+    </form>
+  </section>
 
-    <!-- Script pour la navigation dynamique et le slider automatique -->
-    <script>
-        // Fonction pour afficher uniquement la section ciblée et masquer les autres
-        function showSection(sectionId) {
-            var sections = document.querySelectorAll('section.content');
-            sections.forEach(function(section) {
-                section.style.display = 'none';
-            });
-            var targetSection = document.getElementById(sectionId);
-            if (targetSection) {
-                targetSection.style.display = 'block';
-            }
-        }
+  <!-- SCRIPT : Navigation et slider + chargement de la galerie patchwork -->
+  <script>
+    // Affiche uniquement la section ciblée et masque les autres
+    function showSection(sectionId) {
+      var sections = document.querySelectorAll('section.content');
+      sections.forEach(function(section) {
+        section.style.display = 'none';
+      });
+      var targetSection = document.getElementById(sectionId);
+      if (targetSection) {
+        targetSection.style.display = 'block';
+      }
+    }
 
-        document.addEventListener('DOMContentLoaded', function() {
-            // Afficher par défaut la section "home"
-            showSection('home');
+    document.addEventListener('DOMContentLoaded', function() {
+      // Afficher par défaut la section "home"
+      showSection('home');
 
-            // Gestion de la navigation via le menu et le bouton CTA
-            var navLinks = document.querySelectorAll('nav a, .cta-button');
-            navLinks.forEach(function(link) {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    var target = this.getAttribute('data-target');
-                    if (target) {
-                        showSection(target);
-                    }
-                });
-            });
-
-            // Slider automatique
-            var slides = document.querySelectorAll('.slide');
-            var currentSlide = 0;
-            var slideInterval = setInterval(nextSlide, 4000); // Change de slide toutes les 4 secondes
-
-            function nextSlide() {
-                slides[currentSlide].classList.remove('active');
-                currentSlide = (currentSlide + 1) % slides.length;
-                slides[currentSlide].classList.add('active');
-            }
+      // Gestion de la navigation via le menu et le bouton CTA
+      var navLinks = document.querySelectorAll('nav a, .cta-button');
+      navLinks.forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          var target = this.getAttribute('data-target');
+          if (target) {
+            showSection(target);
+          }
         });
-    </script>
+      });
+
+      // Slider automatique
+      var slides = document.querySelectorAll('.slide');
+      var currentSlide = 0;
+      setInterval(function() {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+      }, 4000);
+
+      // Chargement de la galerie en patchwork
+      // Vous pouvez adapter le tableau avec le(s) nom(s) d'image(s) souhaité(s)
+      var patchworkImages = [
+        "image1.jpeg",
+        "image2.jpeg",
+        "image3.jpeg",
+        "image4.jpeg"
+      ];
+      var gallery = document.getElementById('gallery');
+      patchworkImages.forEach(function(filename) {
+        var img = document.createElement('img');
+        img.src = filename;
+        img.alt = 'photo automobile';
+        gallery.appendChild(img);
+      });
+    });
+  </script>
 </body>
 </html>

@@ -3,63 +3,63 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body {
+  }
+  
+  body {
     font-family: Arial, sans-serif;
     background-color: #121212; /* Fond sombre */
     color: #e0e0e0;            /* Texte clair */
     line-height: 1.6;
-}
-
-/* --- Header et Navigation --- */
-header {
+  }
+  
+  /* --- Header et Navigation --- */
+  header {
     background: #1e1e1e;
     padding: 20px;
     text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-nav ul {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  }
+  
+  nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
     gap: 20px;
-}
-
-nav ul li a {
+  }
+  
+  nav ul li a {
     color: #e0e0e0;
     text-decoration: none;
     font-size: 18px;
     transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
+  }
+  
+  nav ul li a:hover {
     color: #ff6600; /* Couleur d'accent */
-}
-
-/* --- Sections --- */
-section.content {
+  }
+  
+  /* --- Sections --- */
+  section.content {
     padding: 20px;
     display: none; /* Masquées par défaut */
     animation: fadeIn 0.5s ease-in-out;
-}
-
-@keyframes fadeIn {
+  }
+  
+  @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
-}
-
-/* --- Slider --- */
-.slider {
+  }
+  
+  /* --- Slider --- */
+  .slider {
     position: relative;
     width: 100%;
     overflow: hidden;
     margin-bottom: 20px;
-}
-
-/* Overlay sur le slider pour effet de contraste et parallax léger */
-.slider .overlay {
+  }
+  
+  /* Overlay sur le slider pour effet de contraste et parallax léger */
+  .slider .overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -67,26 +67,25 @@ section.content {
     height: 100%;
     background: rgba(0,0,0,0.3);
     pointer-events: none;
-    /* Vous pouvez ajouter un effet de déplacement léger sur scroll avec du JS ou CSS */
-}
-
-.slide {
+  }
+  
+  .slide {
     display: none;  /* Toutes les slides sont cachées par défaut */
     position: relative;
-}
-
-.slide.active {
+  }
+  
+  .slide.active {
     display: block;  /* La slide active est affichée */
     animation: fadeIn 1s ease-in-out;
-}
-
-.slide img {
+  }
+  
+  .slide img {
     width: 100%;
     height: auto;
     border-radius: 8px;
-}
-
-.caption {
+  }
+  
+  .caption {
     position: absolute;
     bottom: 20px;
     left: 20px;
@@ -96,57 +95,50 @@ section.content {
     border-radius: 4px;
     font-size: 18px;
     animation: fadeInUp 1s ease-in-out;
-}
-
-/* Animation pour le texte d'accroche */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* --- Galerie en Patchwork (optionnelle) --- */
-.gallery {
+  }
+  
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* --- Galerie en Patchwork --- */
+  .gallery {
     column-count: 2;
     column-gap: 10px;
-    margin-top: 10px;
-}
-
-@media (min-width: 768px) {
+    margin-top: 20px;
+  }
+  
+  @media (min-width: 768px) {
     .gallery {
-        column-count: 3;
+      column-count: 3;
     }
-}
-
-@media (min-width: 1080px) {
+  }
+  
+  @media (min-width: 1080px) {
     .gallery {
-        column-count: 4;
+      column-count: 4;
     }
-}
-
-.gallery img {
+  }
+  
+  .gallery img {
     width: 100%;
     margin-bottom: 10px;
     border-radius: 8px;
     transition: transform 0.3s ease;
-}
-
-.gallery img:hover {
+  }
+  
+  .gallery img:hover {
     transform: scale(1.05);
-}
-
-/* --- Bouton Call-to-Action --- */
-.cta {
+  }
+  
+  /* --- Bouton Call-to-Action --- */
+  .cta {
     text-align: center;
     margin: 20px 0;
-}
-
-.cta-button {
+  }
+  
+  .cta-button {
     display: inline-block;
     padding: 10px 20px;
     background: #ff6600;
@@ -155,54 +147,54 @@ section.content {
     border-radius: 4px;
     font-size: 18px;
     transition: background 0.3s ease, transform 0.3s ease;
-}
-
-.cta-button:hover {
+  }
+  
+  .cta-button:hover {
     background: #e65c00;
     transform: scale(1.05);
-}
-
-/* --- Section About --- */
-#about p {
+  }
+  
+  /* --- Section About --- */
+  #about p {
     margin-bottom: 15px;
-}
-
-/* --- Section Contact --- */
-.contact-links p {
+  }
+  
+  /* --- Section Contact --- */
+  .contact-links p {
     margin-bottom: 10px;
-}
-
-.contact-links a {
+  }
+  
+  .contact-links a {
     color: #ff6600;
     text-decoration: none;
     transition: color 0.3s ease;
-}
-
-.contact-links a:hover {
+  }
+  
+  .contact-links a:hover {
     color: #e65c00;
-}
-
-form {
+  }
+  
+  form {
     display: flex;
     flex-direction: column;
     margin-top: 15px;
-}
-
-form label {
+  }
+  
+  form label {
     margin-top: 10px;
-}
-
-form input,
-form textarea {
+  }
+  
+  form input,
+  form textarea {
     padding: 10px;
     margin-top: 5px;
     border: 1px solid #333;
     border-radius: 4px;
     background-color: #2a2a2a;
     color: #e0e0e0;
-}
-
-form button {
+  }
+  
+  form button {
     margin-top: 15px;
     padding: 10px;
     background: #ff6600;
@@ -211,8 +203,9 @@ form button {
     border-radius: 4px;
     cursor: pointer;
     transition: background 0.3s ease;
-}
-
-form button:hover {
+  }
+  
+  form button:hover {
     background: #e65c00;
-}
+  }
+  
