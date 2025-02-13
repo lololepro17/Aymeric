@@ -93,23 +93,93 @@ nav ul li a:hover {
   transform: scale(1.05);
 }
 
-/* PORTFOLIO */
+/* SECTION PORTFOLIO */
+#portfolio {
+  background: #1e1e1e;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+#portfolio h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #ff6600;
+  position: relative;
+  display: inline-block;
+}
+
+#portfolio h2::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 4px;
+  background: #ff6600;
+  margin: 10px auto 0;
+}
+
+/* CONTAINER PORTFOLIO */
+.portfolio-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* GRILLE RESPONSIVE */
 .portfolio-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
   padding: 20px;
 }
 
-.portfolio-gallery img {
-  width: 100%;
-  transition: transform 0.3s;
-  cursor: pointer;
+/* STYLE DES IMAGES */
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-.portfolio-gallery img:hover {
-  transform: scale(1.05);
+.portfolio-item img {
+  width: 100%;
+  display: block;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
+
+/* EFFET HOVER SUR LES IMAGES */
+.portfolio-item:hover img {
+  transform: scale(1.05);
+  filter: brightness(80%);
+}
+
+/* LIGHTBOX */
+#lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+
+.close-lightbox {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
+}
+
 
 /* SECTION CONTACT */
 #contact {
@@ -171,4 +241,75 @@ nav ul li a:hover {
 
 .contact-form button:hover {
   background: #e65c00;
+}
+
+/* SECTION À PROPOS */
+#about {
+  background: url('background-texture.jpg') center/cover no-repeat;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 900px;
+  margin: auto;
+}
+
+.about-text {
+  max-width: 600px;
+  text-align: left;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.about-text h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.about-text strong {
+  color: #ff6600;
+}
+
+.about-image {
+  margin-top: 20px;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  animation: fadeInUp 1s ease-in-out;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

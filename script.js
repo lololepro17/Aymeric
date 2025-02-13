@@ -3,7 +3,7 @@ window.addEventListener('scroll', function() {
   document.querySelector('header').classList.toggle('scrolled', window.scrollY > 50);
 });
 
-// LIGHTBOX
+// LIGHTBOX INTERACTIF
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");
 const closeLightbox = document.querySelector(".close-lightbox");
@@ -18,3 +18,4 @@ document.querySelectorAll(".lightbox-trigger").forEach(img => {
 closeLightbox.addEventListener("click", () => {
   lightbox.style.display = "none";
 });
+
