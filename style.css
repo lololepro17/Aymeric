@@ -9,6 +9,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   background-color: #121212;
   color: #e0e0e0;
+  overflow-x: hidden;
 }
 
 /* HEADER */
@@ -51,8 +52,8 @@ nav ul li a:hover {
 /* HERO */
 .hero {
   height: 100vh;
-  background-size: cover;
-  background-position: center;
+  background: url('oui.jpg') center/cover no-repeat;
+  background-attachment: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -91,6 +92,57 @@ nav ul li a:hover {
 .cta-button:hover {
   background: #e65c00;
   transform: scale(1.05);
+}
+
+/* SECTION À PROPOS */
+#about {
+  background: url('background-texture.jpg') center/cover no-repeat fixed;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 900px;
+  margin: auto;
+  gap: 30px;
+}
+
+.about-text {
+  max-width: 600px;
+  text-align: left;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.about-text h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.about-text strong {
+  color: #ff6600;
+}
+
+.about-image {
+  flex: 1;
+  text-align: center;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  animation: fadeInUp 1s ease-in-out;
 }
 
 /* SECTION PORTFOLIO */
@@ -137,6 +189,7 @@ nav ul li a:hover {
   overflow: hidden;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease-in-out;
 }
 
 .portfolio-item img {
@@ -145,9 +198,12 @@ nav ul li a:hover {
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-/* EFFET HOVER SUR LES IMAGES */
-.portfolio-item:hover img {
+/* ANIMATION SURVOL IMAGES */
+.portfolio-item:hover {
   transform: scale(1.05);
+}
+
+.portfolio-item:hover img {
   filter: brightness(80%);
 }
 
@@ -179,7 +235,6 @@ nav ul li a:hover {
   cursor: pointer;
   color: white;
 }
-
 
 /* SECTION CONTACT */
 #contact {
@@ -243,73 +298,34 @@ nav ul li a:hover {
   background: #e65c00;
 }
 
-/* SECTION À PROPOS */
-#about {
-  background: url('background-texture.jpg') center/cover no-repeat;
-  padding: 60px 20px;
-  text-align: center;
-}
+/* RESPONSIVE */
+@media screen and (max-width: 768px) {
+  .hero {
+    background-attachment: scroll;
+    background-size: cover;
+  }
 
-.about-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 900px;
-  margin: auto;
-}
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
 
-.about-text {
-  max-width: 600px;
-  text-align: left;
-  animation: fadeIn 1s ease-in-out;
-}
+  .about-text {
+    text-align: center;
+  }
 
-.about-text h2 {
-  font-size: 36px;
-  margin-bottom: 20px;
-}
-
-.about-text p {
-  font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 15px;
-}
-
-.about-text strong {
-  color: #ff6600;
-}
-
-.about-image {
-  margin-top: 20px;
-}
-
-.about-image img {
-  width: 100%;
-  max-width: 400px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-  animation: fadeInUp 1s ease-in-out;
+  .portfolio-gallery {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ANIMATIONS */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
