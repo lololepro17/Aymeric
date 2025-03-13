@@ -1,103 +1,97 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio Photographie Automobile</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+  <title>Aymeric Photographie - Automobiles</title>
+  
+  <!-- feuilles de style responsives -->
+  <link rel="stylesheet" href="css/style-mobile.css" media="screen and (max-width: 767px)">
+  <link rel="stylesheet" href="css/style-tablet.css" media="screen and (min-width: 768px) and (max-width: 1023px)">
+  <link rel="stylesheet" href="css/style-desktop.css" media="screen and (min-width: 1024px)">
 
+</head>
 <body>
 
-  <!-- HEADER TRANSPARENT -->
-  <header id="main-header">
+  <!-- en-tête du site -->
+  <header>
+    <!-- logo ou titre -->
     <div class="logo">AYMERIC PHOTOGRAPHIE</div>
-    <nav>
-      <ul>
-        <li><a href="#home">Accueil</a></li>
-        <li><a href="#about">À propos</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+    <!-- icône hamburger pour mobile -->
+    <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+    <!-- menu de navigation -->
+    <nav id="navLinks" class="nav-links">
+      <a href="#accueil">Accueil</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#a-propos">À propos</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <!-- HERO SECTION AVEC IMAGE EN FOND -->
-  <section id="home" class="hero" style="background-image: url('download.jpg');">
-    <div class="hero-content">
-      <h1>Capturer l’essence de la vitesse</h1>
-      <p>Photographie automobile professionnelle</p>
-      <a href="#portfolio" class="cta-button">Voir mon travail</a>
+  <!-- section d'accueil -->
+  <section id="accueil" class="hero">
+    <h1>Capturer l'essence de la vitesse</h1>
+    <p>
+      Bienvenue sur mon site dédié à la photographie automobile.
+    </p>
+    <button class="cta-button">Voir mon travail</button>
+  </section>
+
+  <!-- section galerie -->
+  <section id="galerie" class="gallery-section">
+    <h2>Galerie</h2>
+    <div class="gallery">
+      <!-- exemples d'images -->
+      <img src="img/voiture1.jpg" alt="Voiture 1" class="gallery-img">
+      <img src="img/voiture2.jpg" alt="Voiture 2" class="gallery-img">
+      <img src="img/voiture3.jpg" alt="Voiture 3" class="gallery-img">
+      <img src="img/voiture4.jpg" alt="Voiture 4" class="gallery-img">
+      <!-- ajoute autant d'images que nécessaire -->
     </div>
   </section>
 
-<!-- SECTION À PROPOS -->
-<section id="about">
-  <div class="about-container">
-    <div class="about-text">
-      <h2>À propos de moi</h2>
-      <p>Passionné par l’automobile et la photographie, je capture chaque détail avec précision et émotion.</p>
-      <p>Je mets en valeur les plus belles voitures à travers mon objectif. Mon approche combine <strong>créativité, technique et amour du détail</strong>.</p>
-      <p>Que ce soit pour un shooting privé, un événement ou une marque, je travaille avec <strong>exigence et passion</strong> pour sublimer chaque véhicule.</p>
-      <p><strong>Travaillons ensemble !</strong> Contactez-moi pour vos projets.</p>
-      <a href="#contact" class="cta-button">Me contacter</a>
-    </div>
-    <div class="about-image">
-      <img src="oui.jpg" alt="Photographe en action">
-    </div>
-  </div>
-</section>
+  <!-- section à propos -->
+  <section id="a-propos">
+    <h2>À propos</h2>
+    <p>
+      Photographe passionné d’automobile, je cherche à capturer la vitesse et l’émotion 
+      à travers mon objectif.
+      <span class="texte-long">
+        Depuis plusieurs années, je parcours les circuits et événements automobiles 
+        afin d’immortaliser ces instants uniques et de partager ma passion avec le 
+        monde entier. Sur ce site, vous découvrirez mes clichés et mes projets 
+        photographiques à venir.
+      </span>
+    </p>
+  </section>
 
-<!-- PORTFOLIO -->
-<section id="portfolio">
-  <h2>Portfolio</h2>
-  <div class="portfolio-container">
-    <div class="portfolio-gallery">
-      <div class="portfolio-item"><img src="oui.jpg" alt="Voiture Blanche"></div>
-      <div class="portfolio-item"><img src="télécharger (1).jpeg" alt="Audi Blanche"></div>
-      <div class="portfolio-item"><img src="télécharger (2).jpeg" alt="Rolls Royce"></div>
-      <div class="portfolio-item"><img src="télécharger (3).jpeg" alt="Honda S2000 Bleue"></div>
-      <div class="portfolio-item"><img src="télécharger (4).jpeg" alt="BMW Noire"></div>
-      <div class="portfolio-item"><img src="télécharger (5).jpeg" alt="Audi RS Rouge"></div>
-      <div class="portfolio-item"><img src="télécharger (6).jpeg" alt="Mazda Noire"></div>
-      <div class="portfolio-item"><img src="télécharger.jpeg" alt="BMW E46 Noire"></div>
-    </div>
-  </div>
-</section>
-
-
-  <!-- LIGHTBOX -->
-  <div id="lightbox">
-    <span class="close-lightbox">&times;</span>
-    <img id="lightbox-img" src="" alt="Agrandissement">
-  </div>
-
-
-  <!-- SECTION CONTACT -->
+  <!-- section contact -->
   <section id="contact">
     <h2>Contact</h2>
-    <div class="contact-links">
-      <p><a href="https://www.instagram.com/a.y.meric" target="_blank">Instagram</a></p>
-      <p><a href="mailto:aymeric07.petit@gmail.com">Envoyer un email</a></p>
-    </div>
+    <p>
+      Pour toute demande de shooting ou d’informations, n’hésitez pas à me contacter.
+    </p>
+    <!-- exemple de formulaire ou lien mail -->
+    <form action="#" method="post">
+      <label for="name">Nom :</label>
+      <input type="text" id="name" name="name" required>
 
-    <form class="contact-form">
-      <input type="text" placeholder="Votre nom" required>
-      <input type="email" placeholder="Votre email" required>
-      <textarea placeholder="Votre message" rows="5" required></textarea>
+      <label for="email">Email :</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Message :</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+
       <button type="submit">Envoyer</button>
     </form>
   </section>
 
+  <!-- pied de page -->
+  <footer>
+    <p>&copy; 2025 Aymeric Photographie</p>
+  </footer>
 
-  <!-- LIGHTBOX -->
-  <div id="lightbox">
-    <span class="close-lightbox">&times;</span>
-    <img id="lightbox-img" src="" alt="Agrandissement">
-  </div>
-
-  <script src="script.js"></script>
+  <!-- script javascript -->
+  <script src="js/script.js"></script>
 </body>
-
 </html>

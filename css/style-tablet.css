@@ -1,0 +1,45 @@
+/* style-tablet.css */
+
+/* on peut reprendre les mêmes styles de base que sur mobile 
+   et ajuster certains éléments pour l'écran tablette (768px à 1023px) */
+
+/* en-tête */
+header {
+    padding: 1rem;
+  }
+  
+  /* hamburger: on peut le laisser visible si on souhaite 
+     ou afficher la nav différemment */
+  .hamburger {
+    font-size: 1.8rem;
+  }
+  
+  /* nav-links: on peut choisir de l’afficher en horizontal ou non */
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 4rem;
+    right: 1rem;
+    width: 200px;
+  }
+  
+  /* hero */
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  
+  /* galerie: on peut passer à 3 colonnes si on veut */
+  .gallery {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  
+  /* formulaires */
+  input, textarea {
+    font-size: 1.1rem;
+  }
+  
+  button[type="submit"] {
+    font-size: 1.1rem;
+  }
+  
