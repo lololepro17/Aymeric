@@ -4,22 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aymeric Photographie - Automobiles</title>
-  
   <!-- feuilles de style responsives -->
   <link rel="stylesheet" href="css/style-mobile.css" media="screen and (max-width: 767px)">
-  <link rel="stylesheet" href="css/style-tablet.css" media="screen and (min-width: 768px) and (max-width: 1023px)">
   <link rel="stylesheet" href="css/style-desktop.css" media="screen and (min-width: 1024px)">
-
 </head>
 <body>
 
   <!-- en-tête du site -->
   <header>
-    <!-- logo ou titre -->
     <div class="logo">AYMERIC PHOTOGRAPHIE</div>
-    <!-- icône hamburger pour mobile -->
     <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
-    <!-- menu de navigation -->
     <nav id="navLinks" class="nav-links">
       <a href="#accueil">Accueil</a>
       <a href="#galerie">Galerie</a>
@@ -30,11 +24,11 @@
 
   <!-- section d'accueil -->
   <section id="accueil" class="hero">
-    <h1>Capturer l'essence de la vitesse</h1>
-    <p>
+    <h1 class="fade-in">Capturer l'essence de la vitesse</h1>
+    <p class="fade-in-delay">
       Bienvenue sur mon site dédié à la photographie automobile.
     </p>
-    <button class="cta-button">Voir mon travail</button>
+    <button class="cta-button fade-in-delay">Voir mon travail</button>
   </section>
 
   <!-- section galerie -->
@@ -46,7 +40,6 @@
       <img src="img/voiture2.jpg" alt="Voiture 2" class="gallery-img">
       <img src="img/voiture3.jpg" alt="Voiture 3" class="gallery-img">
       <img src="img/voiture4.jpg" alt="Voiture 4" class="gallery-img">
-      <!-- ajoute autant d'images que nécessaire -->
     </div>
   </section>
 
@@ -54,13 +47,9 @@
   <section id="a-propos">
     <h2>À propos</h2>
     <p>
-      Photographe passionné d’automobile, je cherche à capturer la vitesse et l’émotion 
-      à travers mon objectif.
+      Photographe passionné d’automobile, je capture la vitesse et l’émotion. 
       <span class="texte-long">
-        Depuis plusieurs années, je parcours les circuits et événements automobiles 
-        afin d’immortaliser ces instants uniques et de partager ma passion avec le 
-        monde entier. Sur ce site, vous découvrirez mes clichés et mes projets 
-        photographiques à venir.
+        Depuis plusieurs années, je parcours circuits et événements automobiles pour immortaliser des instants uniques et partager ma passion.
       </span>
     </p>
   </section>
@@ -71,7 +60,6 @@
     <p>
       Pour toute demande de shooting ou d’informations, n’hésitez pas à me contacter.
     </p>
-    <!-- exemple de formulaire ou lien mail -->
     <form action="#" method="post">
       <label for="name">Nom :</label>
       <input type="text" id="name" name="name" required>

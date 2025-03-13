@@ -1,0 +1,136 @@
+/* style-desktop.css */
+
+/* configuration de base pour desktop */
+body {
+    background-color: #fff;
+    color: #000;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    color: #fff;
+    padding: 1rem 2rem;
+    position: relative;
+  }
+  
+  .hamburger {
+    display: none;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 1rem;
+    position: static;
+  }
+  
+  .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .nav-links a:hover {
+    background-color: #222;
+    transform: translateY(-2px);
+  }
+  
+  /* section hero avec animation */
+  .hero {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, #000, #444);
+    color: #fff;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero p,
+  .cta-button {
+    font-size: 1.2rem;
+  }
+  
+  /* bouton d'appel à l'action */
+  .cta-button {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+  }
+  
+  .cta-button:hover {
+    background-color: #ddd;
+    transform: scale(1.05);
+  }
+  
+  /* galerie */
+  .gallery-section {
+    padding: 2rem;
+  }
+  
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+  
+  .gallery-img {
+    transition: transform 0.3s;
+  }
+  
+  .gallery-img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* section à propos et contact centrées */
+  #a-propos, #contact {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* formulaires */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  input, textarea {
+    font-size: 1.1rem;
+    padding: 0.75rem;
+  }
+  
+  button[type="submit"] {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #ddd;
+    transform: scale(1.05);
+  }
+  
+  /* pied de page */
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #000;
+    color: #fff;
+  }
+  
